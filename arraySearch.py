@@ -14,5 +14,9 @@ f.closed
 for cusNum in newCustomers:
 	if cusNum not in existingCustomers:
 		returnArray.append(cusNum)
-		
-print (returnArray)
+	
+#print (returnArray)
+f = open('C:/return_file.txt','w+')
+for cusNum in returnArray:
+	f.write(cusNum)
+f.close()
