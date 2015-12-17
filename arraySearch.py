@@ -1,6 +1,5 @@
 existingCustomers=[]
 newCustomers = []
-returnArray = []
 with open('C:/existing_customers.txt','r') as f:
 	for line in f:
 		existingCustomers.append(line)
@@ -11,12 +10,8 @@ with open('C:/new_customers.txt','r') as f:
 		newCustomers.append(line)
 f.closed
 
+f = open('C:/return_file.txt','w+')
 for cusNum in newCustomers:
 	if cusNum not in existingCustomers:
-		returnArray.append(cusNum)
-	
-#print (returnArray)
-f = open('C:/return_file.txt','w+')
-for cusNum in returnArray:
-	f.write(cusNum)
+		f.write(cusNum)
 f.close()
